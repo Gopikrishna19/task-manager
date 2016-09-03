@@ -5,11 +5,18 @@ import {shallow} from 'enzyme';
 
 describe('Given AddTaskForm component', () => {
 
-    let element;
+    let element,
+        testProps;
 
     beforeEach(() => {
 
-        element = shallow(<AddTaskForm />);
+        testProps = {
+            actions: {
+                addTask: () => {}
+            }
+        };
+
+        element = shallow(<AddTaskForm {...testProps} />);
 
     });
 
