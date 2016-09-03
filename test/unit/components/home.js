@@ -1,3 +1,4 @@
+import AddTaskForm from '../../../src/components/add-task-form';
 import Home from '../../../src/components/home';
 import React from 'react';
 import TaskList from '../../../src/components/task-list';
@@ -20,9 +21,15 @@ describe('Given Home component', () => {
 
     });
 
+    it('should have AddTaskForm', () => {
+
+        expect(element.childAt(0).type()).equals(AddTaskForm);
+
+    });
+
     it('should have TaskList', () => {
 
-        expect(element.childAt(0).type()).equals(TaskList);
+        expect(element.childAt(1).type()).equals(TaskList);
 
     });
 
