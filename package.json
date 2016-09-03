@@ -4,14 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron .",
+    "build": "webpack",
+    "lint": "eslint --ignore-path .gitignore",
+    "start": "npm run build && electron .",
     "test": "mocha"
   },
   "author": "Gopikrishna Sathyamurthy",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
     "code": "^3.0.2",
+    "css-loader": "^0.24.0",
     "electron": "^1.3.5",
-    "mocha": "^3.0.2"
+    "eslint": "^3.4.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "mocha": "^3.0.2",
+    "webpack": "^1.13.2"
   }
 }
