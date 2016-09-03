@@ -1,11 +1,15 @@
-import AddTaskForm from './add-task-form';
+import AddTaskFormContainer from './add-task-form-connector';
+import {Provider} from 'react-redux';
 import React from 'react';
-import TasksList from './task-list';
+import TasksListContainer from './task-list-connector';
+import {getStore} from '../store';
 
 const Home = () =>
-    <div>
-        <AddTaskForm />
-        <TasksList />
-    </div>;
+    <Provider store={getStore()}>
+        <div>
+            <AddTaskFormContainer />
+            <TasksListContainer />
+        </div>
+    </Provider>;
 
 export default Home;

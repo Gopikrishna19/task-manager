@@ -7,17 +7,19 @@ const TaskList = props =>
             props.tasks.map(
                 (task, index) =>
                     <li key={index}>
-                        <Task task={task}/>
+                        <Task
+                            deleteTask={() => props.actions.deleteTask(index)}
+                            task={task}
+                            toggleDone={() => props.actions.toggleDone(index)}
+                        />
                     </li>
             )
         }
     </ul>;
 
 TaskList.propTypes = {
+    actions: PropTypes.object.isRequired,
     tasks: PropTypes.array.isRequired
-};
-TaskList.defaultProps = {
-    tasks: []
 };
 
 export default TaskList;
