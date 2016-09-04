@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "config": {
+    "entry": "dist/index.html",
+    "devTools": true
+  },
   "scripts": {
     "build": "webpack",
     "lint": "eslint --ignore-path .gitignore",

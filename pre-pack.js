@@ -6,6 +6,10 @@ const dist = './dist/';
 fs.createReadStream(main).pipe(fs.createWriteStream(`${dist}${main}`));
 
 const config = {
+    config: {
+        devTools: false,
+        entry: 'index.html'
+    },
     main,
     name,
     version

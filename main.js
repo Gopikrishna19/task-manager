@@ -1,4 +1,5 @@
 const electron = require('electron');
+const {config} = require('./package.json');
 
 const BrowserWindow = electron.BrowserWindow;
 const app = electron.app;
@@ -14,10 +15,15 @@ function createWindow() {
         height,
         width
     });
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/${config.entry}`);
     mainWindow.setMenu(null);
     mainWindow.on('closed', () => mainWindow = null);
-    // mainWindow.webContents.openDevTools();
+
+    if (config.devTools) {
+
+        mainWindow.webContents.openDevTools();
+
+    }
 
 }
 
