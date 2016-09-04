@@ -2,7 +2,6 @@ const electron = require('electron');
 
 const BrowserWindow = electron.BrowserWindow;
 const app = electron.app;
-const dir = process.argv.p ? '' : '/dist';
 
 let mainWindow;
 
@@ -15,7 +14,7 @@ function createWindow() {
         height,
         width
     });
-    mainWindow.loadURL(`file://${__dirname}${dir}/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
     mainWindow.setMenu(null);
     mainWindow.on('closed', () => mainWindow = null);
     // mainWindow.webContents.openDevTools();
